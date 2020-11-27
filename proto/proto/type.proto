@@ -1,0 +1,31 @@
+syntax = "proto3";
+package pb;
+
+option go_package = "./pb;pb";
+option java_package = "com.bat.im";
+option java_outer_classname = "Type";
+
+
+//general error response
+message ErrorResponse{
+  string err = 224; // 0xe0=224, this is the err message
+}
+
+message Location{
+  double latitude = 1; // 纬度
+  double longitude = 2; // 经度
+
+  string name = 3;
+  string addr = 4;
+}
+
+message IdName{
+  int64 id = 1;
+  string name = 3;
+}
+
+message Limit{
+  int32 skip = 1; //offset
+  int32 count = 2; //limit
+  bool desc = 3;//if 1 desc
+}

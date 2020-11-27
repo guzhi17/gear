@@ -1,0 +1,30 @@
+syntax = "proto3";
+package pb;
+
+option go_package = "./pb;pb";
+option java_package = "com.bat.im";
+option java_outer_classname = "Sys";
+
+import "type.proto";
+
+message SysEmptyQuery{}
+
+message SysEchoQuery{ string word = 1; }
+message SysEchoQueryResponse{ string word = 1; }
+
+enum SysTimeTypes{
+  STT_Second = 0;
+  STT_MilliSecond = 1;
+  STT_MicroSecond = 2;
+  STT_NanoSecond = 3;
+}
+message SysTimeQuery{SysTimeTypes tt = 1;}
+message SysTimeQueryResponse{int64 v = 1;}
+
+
+message SysCheckAccountQuery{
+  IdName account = 1;
+}
+message SysCheckAccountQueryResponse{
+  bool has = 1;
+}

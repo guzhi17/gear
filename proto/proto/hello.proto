@@ -1,0 +1,15 @@
+syntax = "proto3";
+package pb;
+
+option go_package = "./pb;pb";
+option java_package = "com.bat.im";
+option java_outer_classname = "Hello";
+
+
+import "sys.proto";
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (SysEchoQuery) returns (SysEchoQueryResponse) {}
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+package pb;
+
+option go_package = "./pb;pb";
+option java_package = "com.bat.im";
+option java_outer_classname = "Ids";
+
+enum Fids{
+    Fid_None            = 0x0000;
+    Fid_SysEchoQuery    = 0x0010;
+    Fid_SysTimeQuery    = 0x0011;
+    Fid_SysCheckAccountQuery = 0x0100;
+}
